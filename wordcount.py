@@ -1,3 +1,5 @@
+import sys
+
 def count_words(filename):
     filename = open(filename)
   
@@ -5,9 +7,14 @@ def count_words(filename):
 
     for line in filename:
         line = line.rstrip()
+        line = line.lower()
+        line = line.rstrip('.')
+        line = line.replace(",", "")
+        line = line.replace("?", "")
         #remove commas
-        #print words
+        #print words   
         words = line.split(" ")
+
 
     #each word in lists of stripped words
         for word in words:
@@ -16,6 +23,4 @@ def count_words(filename):
     for key, value in word_occurrences.items():
         print "{} {}".format(key, value)
 
-
-
-count_words("test.txt")
+# count_words("test.txt")

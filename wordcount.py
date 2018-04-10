@@ -1,4 +1,4 @@
-import sys
+from sys import argv 
 
 def count_words(filename):
     filename = open(filename)

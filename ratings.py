@@ -1,3 +1,7 @@
+import sys
+
+filename = sys.argv[1]
+
 def restaurant_rating_organizer(filename):
     """Restaurant rating lister."""
     #reads the ratings in from file(scores.txt)
@@ -10,15 +14,15 @@ def restaurant_rating_organizer(filename):
         name_rating = line.split(":")
         all_restaurants.append(name_rating)
 
-    all_restaurants = sorted(all_restaurants)    
+
     for restaurant in all_restaurants:
         restaurants_and_ratings[restaurant[0]] = restaurant[1] 
 
 
-    for restaurant in restaurants_and_ratings:
+    for restaurant in sorted(restaurants_and_ratings):
         value = restaurants_and_ratings[restaurant]
 
         print "{} is rated at {}.".format(restaurant, value)
 
  
-restaurant_rating_organizer("scores.txt")
+restaurant_rating_organizer(filename)
